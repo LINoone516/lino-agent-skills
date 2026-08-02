@@ -1,0 +1,12 @@
+from numpy.random import default_rng
+r = default_rng(11)
+SetData('d', r.normal(0, 1, 500))
+Set('width', '8cm'); Set('height', '6cm')
+Add('page', name='page1', autoadd=False); To('page1')
+Add('graph', name='g1', autoadd=False); To('g1')
+Add('axis', name='x', autoadd=False); To('x'); Set('label', 'Value'); To('..')
+Add('axis', name='y', autoadd=False); To('y'); Set('label', 'Counts'); Set('direction', 'vertical'); To('..')
+Add('histo', name='h1', autoadd=False)
+To('h1'); Set('data', 'd'); Set('numbins', 25); Set('style', 'join'); To('..')
+To('/')
+Export('histo.png', dpi=120)

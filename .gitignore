@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# 环境/密钥
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 运行日志
+*.log

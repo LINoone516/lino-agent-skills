@@ -1,0 +1,11 @@
+X, Y = meshgrid(arange(-10, 11), arange(-10, 11))
+Z = sin(sqrt(X**2+Y**2)/2) * 3
+SetData2D('z', Z)
+Set('width', '8cm'); Set('height', '6cm')
+Add('page', name='page1', autoadd=False); To('page1')
+Add('scene3d', name='sc1', autoadd=False); To('sc1')
+Add('graph3d', name='g3'); To('g3')
+Add('surface3d', name='s3', autoadd=False)
+To('s3'); Set('data', 'z'); Set('Surface/colorMap', 'heat'); To('..')
+To('/')
+Export('surface3d.png', dpi=120)

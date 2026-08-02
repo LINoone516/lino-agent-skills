@@ -1,0 +1,12 @@
+SetData('y1', [3.2, 4.5, 2.8, 5.1]); SetData('y2', [2.1, 3.3, 4.0, 3.7])
+SetData('x', [1, 2, 3, 4])
+Set('width', '8cm'); Set('height', '6cm'); Set('colorTheme', 'colorbrewer1')
+Add('page', name='page1', autoadd=False); To('page1')
+Add('graph', name='g1', autoadd=False); To('g1')
+Add('axis', name='x', autoadd=False); To('x'); Set('label', 'Category'); To('..')
+Add('axis', name='y', autoadd=False); To('y'); Set('label', 'Value'); Set('direction', 'vertical'); To('..')
+Add('bar', name='b1', autoadd=False)
+To('b1'); Set('lengths', ('y1', 'y2')); Set('posn', 'x'); Set('mode', 'grouped'); To('..')
+Add('key', name='key1', autoadd=False); To('key1'); Set('Border/hide', True); Set('horzPosn', 'right'); Set('vertPosn', 'top'); To('/')
+Export('bar.png', dpi=120)
+

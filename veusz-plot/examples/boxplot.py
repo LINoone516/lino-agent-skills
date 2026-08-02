@@ -1,0 +1,12 @@
+from numpy.random import default_rng
+r = default_rng(7)
+SetData('a', r.normal(0, 1, 60)); SetData('b', r.normal(0.5, 1.5, 60)); SetData('c', r.normal(-0.3, 0.8, 60))
+Set('width', '8cm'); Set('height', '6cm')
+Add('page', name='page1', autoadd=False); To('page1')
+Add('graph', name='g1', autoadd=False); To('g1')
+Add('axis', name='x', autoadd=False); To('x'); To('..')
+Add('axis', name='y', autoadd=False); To('y'); Set('direction', 'vertical'); To('..')
+Add('boxplot', name='bp1', autoadd=False)
+To('bp1'); Set('values', ('a', 'b', 'c')); Set('outliersmarker', 'circle'); To('..')
+Add('key', name='key1', autoadd=False); To('key1'); Set('Border/hide', True); Set('horzPosn', 'right'); Set('vertPosn', 'top'); To('/')
+Export('boxplot.png', dpi=120)

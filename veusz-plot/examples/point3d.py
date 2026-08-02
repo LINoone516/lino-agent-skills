@@ -1,0 +1,12 @@
+from numpy.random import default_rng
+r = default_rng(5)
+xv = r.uniform(-3, 3, 80); yv = r.uniform(-3, 3, 80); zv = 5*exp(-(xv**2+yv**2)/4)
+SetData('x', xv); SetData('y', yv); SetData('z', zv)
+Set('width', '8cm'); Set('height', '6cm')
+Add('page', name='page1', autoadd=False); To('page1')
+Add('scene3d', name='sc1', autoadd=False); To('sc1')
+Add('graph3d', name='g3'); To('g3')
+Add('point3d', name='p3', autoadd=False)
+To('p3'); Set('xData', 'x'); Set('yData', 'y'); Set('zData', 'z'); Set('markerSize', 6); To('..')
+To('/')
+Export('point3d.png', dpi=120)
