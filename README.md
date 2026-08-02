@@ -46,9 +46,15 @@ python lino-local-vision/scripts/analyze.py --image demo.png --prompt "用一句
 
 ## 示例图 / Examples
 
-`lino-veusz-sci-plot/examples/` 内含 16 种图型的完整脚本 + 输出 PNG：
+`lino-veusz-sci-plot/examples/` 内含 **15 种科研图型的完整脚本 + 输出 PNG**，拿过来改数据就能用：
 
-折线/散点/误差棒 (`xy`) · 柱状 (`bar`) · 箱线 (`boxplot`) · 直方图 (`histo`) · 函数曲线 (`function`) · 拟合 (`fit`) · 等高线 (`contour`) · 热图 (`image`) · 矢量场 (`vectorfield`) · 误差椭圆 (`covariance`) · 极坐标 (`polar`) · 三元图 (`ternary`) · 3D 散点 (`point3d`) · 3D 曲面 (`surface3d`) · 多面板 (`grid`) · 断裂轴 (`axisbroken`) · 标注/形状 (`label_shape`)
+| | | | | |
+|---|---|---|---|---|
+| <img src="lino-veusz-sci-plot/examples/bar.png" width="170"> | <img src="lino-veusz-sci-plot/examples/boxplot.png" width="170"> | <img src="lino-veusz-sci-plot/examples/histo.png" width="170"> | <img src="lino-veusz-sci-plot/examples/fit.png" width="170"> | <img src="lino-veusz-sci-plot/examples/contour.png" width="170"> |
+| <img src="lino-veusz-sci-plot/examples/vectorfield.png" width="170"> | <img src="lino-veusz-sci-plot/examples/covariance.png" width="170"> | <img src="lino-veusz-sci-plot/examples/polar.png" width="170"> | <img src="lino-veusz-sci-plot/examples/ternary.png" width="170"> | <img src="lino-veusz-sci-plot/examples/point3d.png" width="170"> |
+| <img src="lino-veusz-sci-plot/examples/surface3d.png" width="170"> | <img src="lino-veusz-sci-plot/examples/grid.png" width="170"> | <img src="lino-veusz-sci-plot/examples/function.png" width="170"> | <img src="lino-veusz-sci-plot/examples/axisbroken.png" width="170"> | <img src="lino-veusz-sci-plot/examples/label_shape.png" width="170"> |
+
+柱状 (`bar`) · 箱线 (`boxplot`) · 直方图 (`histo`) · 拟合 (`fit`) · 等高线 (`contour`) · 矢量场 (`vectorfield`) · 误差椭圆 (`covariance`) · 极坐标 (`polar`) · 三元图 (`ternary`) · 3D 散点 (`point3d`) · 3D 曲面 (`surface3d`) · 多面板 (`grid`) · 函数曲线 (`function`) · 断裂轴 (`axisbroken`) · 标注/形状 (`label_shape`)
 
 ## 视频教程 / Video Tutorials
 
