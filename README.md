@@ -50,6 +50,10 @@ python lino-local-vision/scripts/analyze.py --image demo.png --prompt "用一句
 
 折线/散点/误差棒 (`xy`) · 柱状 (`bar`) · 箱线 (`boxplot`) · 直方图 (`histo`) · 函数曲线 (`function`) · 拟合 (`fit`) · 等高线 (`contour`) · 热图 (`image`) · 矢量场 (`vectorfield`) · 误差椭圆 (`covariance`) · 极坐标 (`polar`) · 三元图 (`ternary`) · 3D 散点 (`point3d`) · 3D 曲面 (`surface3d`) · 多面板 (`grid`) · 断裂轴 (`axisbroken`) · 标注/形状 (`label_shape`)
 
+## 视频教程 / Video Tutorials
+
+- [DeepSeek V4 Flash 刚发布，但还不能识图！用 Reasonix + LM Studio 本地跑 Qwen3-VL，免费离线](https://www.bilibili.com/video/BV1jT3R6jEZk/) — `lino-local-vision` 中文教学（B站）
+
 ## 许可 / License
 
 MIT © 2026 LINoone516
