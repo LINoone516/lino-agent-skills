@@ -8,7 +8,7 @@ A collection of practical, battle-tested AI agent skills for local/offline scena
 
 | Skill | 用途 / What it does | 依赖 / Dependencies |
 |---|---|---|
-| [lino-local-vision](lino-local-vision/README.md) | 本地视觉：用 LM Studio 跑 Qwen3-VL 多模态模型，离线看图 / OCR，无需 API key | LM Studio + Python 3.9+ + Pillow |
+| [lino-local-vision](lino-local-vision/README.md) | 给 DeepSeek 等文本模型补上"眼睛"：LM Studio 跑 Qwen3-VL 本地视觉，离线看图 / OCR，无需 API key | LM Studio + Python 3.9+ + Pillow |
 | [lino-veusz-sci-plot](lino-veusz-sci-plot/README.md) | 用开源 Veusz 自动化画出版级科学图，覆盖 16 种图型（含 3D / 极坐标 / 三元图） | Veusz 4.x |
 
 ## 这是什么 / What are Agent Skills?
@@ -17,7 +17,7 @@ Agent Skills 是给 AI Agent（如 Claude Code、Reasonix 等）使用的可复�
 一个 skill 目录里包含一份 `SKILL.md`（告诉 agent 怎么用）和若干辅助脚本。
 Agent 在接到相关任务时会自动读取并按照 skill 执行，让复杂操作（画图、看图、OCR）变成一条命令。
 
-- **lino-local-vision**：图片完全在本机推理，不上传任何数据，免费、离线、无 key。
+- **lino-local-vision**：DeepSeek 没有多模态？Reasonix 接 DeepSeek API 也不能识图？用它给文本模型补上"眼睛"——图片完全在本机推理，不上传任何数据，免费、离线、无 key。
 - **lino-veusz-sci-plot**：用开源软件 Veusz（Origin 的开源替代品）批量出图，脚本可复现、可批量导出 PNG/PDF。
 
 ## 安装 / Installation

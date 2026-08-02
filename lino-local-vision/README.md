@@ -1,9 +1,16 @@
 # lino-local-vision — 本地视觉 Agent Skill
 
-调用本机 LM Studio 的本地多模态模型分析图片：**纯本地、不走网络、不需要 API key、无费用**。
-图片完全在本机推理，隐私安全，离线可用。
+> 🎯 **DeepSeek 没有多模态？Reasonix 接 DeepSeek API 不能识图？**
+> 这是给 DeepSeek / 文本大模型补上"眼睛"的本地方案：LM Studio + Qwen3-VL 视觉模型，**纯本地、不走网络、不需要 API key、无费用**。图片完全在本机推理，隐私安全，离线可用。
 
-Local vision skill: run Qwen3-VL on your own machine via LM Studio. Fully offline, free, no API key, no data leaves your computer.
+Local vision skill: run Qwen3-VL on your own machine via LM Studio. Fully offline, free, no API key, no data leaves your computer. **DeepSeek & other text-only LLMs can't see images — this gives them vision, locally.**
+
+## 为什么要这个 / Why
+
+- **DeepSeek V4 Flash 等文本模型没有多模态识图能力**——发图片只能"干瞪眼"，读 PDF/图片只是抽文字，图片本身看不了
+- **Reasonix / Claude Code / Codex 接 DeepSeek API 也一样不能识图**——识图需要多模态模型
+- 本 skill 用 **Qwen3-VL（阿里开源多模态模型）**补上这块：看图、OCR、图片描述全部本地完成
+- 中文教学视频（B站）：[DeepSeek V4 Flash 刚发布，但还不能识图！用 Reasonix + LM Studio 本地跑 Qwen3-VL，免费离线](https://www.bilibili.com/video/BV1jT3R6jEZk/)
 
 ## 依赖 / Dependencies
 
