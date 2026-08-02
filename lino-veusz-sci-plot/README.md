@@ -1,4 +1,4 @@
-# veusz-plot — Veusz 科学绘图自动化 Agent Skill
+# lino-veusz-sci-plot — Veusz 科学绘图自动化 Agent Skill
 
 用开源软件 **Veusz**（Origin 的开源替代品）把数据自动画成出版级科学图。
 脚本可复现、可批量导出 PNG/PDF/SVG/EPS/TIFF/EMF，覆盖 16 种图型。

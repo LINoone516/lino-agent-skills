@@ -1,4 +1,4 @@
-# local-vision — 本地视觉 Agent Skill
+# lino-local-vision — 本地视觉 Agent Skill
 
 调用本机 LM Studio 的本地多模态模型分析图片：**纯本地、不走网络、不需要 API key、无费用**。
 图片完全在本机推理，隐私安全，离线可用。

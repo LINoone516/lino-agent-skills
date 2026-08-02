@@ -1,9 +1,9 @@
 ---
-name: veusz-plot
+name: lino-veusz-sci-plot
 description: 用 Veusz 自动化画全部类型科学图（折线/散点/柱状/箱线/直方图/等高线/热图/矢量场/极坐标/三元图/3D/多面板），脚本批量出 PNG/PDF
 ---
 
-# veusz-plot — Veusz 科学绘图自动化（全图型）
+# lino-veusz-sci-plot — Veusz 科学绘图自动化（全图型）
 
 用 Veusz（开源 Origin 替代品）把数据画成出版级科学图。环境：Veusz 4.x（官方免费，下载 https://veusz.github.io/download/ ；Windows 绿色版自带 Python + Qt + numpy，无需单独装 Python），官方 GPL 软件。下文以 Windows 为例，用 `<veusz-exe>` 代指 Veusz 可执行文件路径（如绿色版解压目录或安装版的 `veusz.exe`）。
 
