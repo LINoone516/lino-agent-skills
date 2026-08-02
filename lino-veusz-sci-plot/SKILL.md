@@ -32,7 +32,7 @@ $p.WaitForExit(60000)   # 必须用 Start-Process + WaitForExit；直接管道/�
 ```python
 # 1. 数据（任选）
 SetData('x', arange(0, 10, 0.5))                     # 1D
-SetData('y', 5*exp(-0.3*x), serr=0.18)               # 带对称误差
+SetData('y', 5*exp(-0.3*x))                 # 带对称误差：再 SetData('y (+-)', 误差数组)
 SetData2D('z', Z, xrange=(0,100), yrange=(0,80))     # 2D（xedge/yedge/xcent/ycent 亦可）
 SetDataText('labels', ['a','b'])                     # 文本数据集
 ImportFileCSV('data.csv', 'x y_meas (+-) y_fit', linked=False)  # CSV；descriptor 见下
@@ -70,7 +70,7 @@ Export('C:/path/out.pdf', pdfdpi=150)
 样式走子路径：`Set('PlotLine/hide', True)`、`Set('MarkerFill/color', 'red')`、`Set('BarFill/fills', ...)`。数据/表达式/字面列表三用（如 `Set('xData', [1,2,3])`）。
 
 ### 2D（父 = graph，需手动 Add axis x/y）
-- **xy**（折线/散点/误差棒）：`xData`/`yData`（默认 'x'/'y'）；`marker`(none/circle/square…)、`markerSize`、`errorStyle`(none/bar/barends/curve/box/diamond…)、`PlotLine/steps`(off/left/right/vcentre/hcentre…)、`PlotLine/interpType`、`PlotLine/width`、`FillBelow/fillto`、`nanHandling`。误差取数据集 serr/nerr/perr。
+- **xy**（折线/散点/误差棒）：`xData`/`yData`（默认 'x'/'y'）；`marker`(none/circle/square…)、`markerSize`、`errorStyle`(none/bar/barends/curve/box/diamond…)、`PlotLine/steps`(off/left/right/vcentre/hcentre…)、`PlotLine/interpType`、`PlotLine/width`、`FillBelow/fillto`、`nanHandling`。误差取误差数据集：`SetData('y (+-)', arr)`（对称）/ `'y (+)'`(perr) / `'y (-)'`(nerr)，或 CSV `(+-)` 列导入。
 - **bar**（柱状）：`lengths`(默认 ('y',)，多数据集元组)；`mode`(grouped/stacked/stacked-area)、`direction`、`barfill`、`errorstyle`(none/bar/barends)；`BarFill/fills`、`BarLine/lines`。**图例：bar 不用 `key` 而用 `keys`**（每数据集标签元组，如 `Set('keys', ('A','B'))`），`posn` 可给 x 位置数据集。
 - **boxplot**（箱线）：`values`(默认 ('data',))；`calculate`(True)、`whiskermode`(默认'1.5IQR')、`direction`、`fillfraction`、`outliersmarker`、`meanmarker`；`calculate=False` 时给 `whiskermin/max、boxmin/max、mean、median` 数据集。
 - **histo**（直方图）：`data`；`calcmode`(counts/fraction/density/…cumulative…)、`binning`(constant/manual/auto/fd/…)、`numbins`(10)、`scaling`、`errormode`(默认 gehrels)、`style`(step/join)；`Fill1`/`Fill2`/`PostLine`。
@@ -119,6 +119,6 @@ Add('point3d' / 'surface3d' / 'function3d' / 'volume3d', ...)
 5. 运行超时误判：一律 `Start-Process` + `WaitForExit(60000)`，不要直接同步调用。
 6. 3D 图结构是 page → **scene3d** → graph3d → plotter3d，graph3d 不能直接挂 page。
 7. 极坐标/三元图父组件是 page/grid（自含坐标），子 plotter 用 **nonorthpoint/nonorthfunc**；2D plotter（xy/function/fit/bar/contour 等）父必须是 **graph**。
-8. 误差棒：数据在 `SetData(..., serr=...)` 或 CSV `(+-)` 列上，plotter 用 `errorStyle` 控制显示样式。
+8. 误差棒：**`SetData('y', yv, serr=...)` 的 serr 参数在 4.2.1 会空图 IndexError！** 正确写法是误差数据集命名约定：`SetData('y', yv)` + `SetData('y (+-)', ye)`（对称）/`'y (+)'`/`'y (-)'`；CSV 用 `(+-)` 列（见 descriptor 语法）。plotter 用 `errorStyle` 控制显示样式。
 9. 中文/特殊字符标签：Veusz 文本用 LaTeX 风格转义，中文需字体支持（默认 Arial 系可能缺字，谨慎使用）。
 10. 脚本环境 numpy 已预置但**数据集名 ≠ Python 变量**：`SetData('x', arr)` 后 `SetData('z', exp(-x**2))` 会 NameError——要么用 Python 变量（`xv=...; SetData('x',xv); SetData('z', exp(-xv**2))`），要么 `SetDataExpression('z', 'exp(-x**2)')`。
